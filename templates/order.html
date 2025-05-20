@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ordered Items</title>
+    </head>
+    <body>
+        {% if order_item %}
+        <ul>
+        {% for i,j in order_item.items() %}
+        <li>{{i}} -Quantity - {{quantity[i]}} Rs.{{j}}.00</li>
+        {% endfor %}
+        </ul>
+        <h3>TOTAL : {{total}}</h3>
+        <form action="order_placed" , method="get">
+        <button type="submit"> Place order</button>
+        </form>
+        {% else %}
+        <h3>No item in your order yet! please order</h3>
+        {% endif %}
+        <a href="/menu">back to menu</a>
+    </body>
+</html>
